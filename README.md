@@ -1,8 +1,6 @@
 # ⚽ VAR Futebol
 
-Gosto muito de futebol, principalmente dos lances polêmicos de impedimento e
-de gol na linha. Resolvi criar um VAR para aprender backend na prática.
-
+Gosto muito de futebol e decidir tentar criar um var.
 Ainda estou no começo, aprendendo enquanto construo.
 
 ## O que já fiz
