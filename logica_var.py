@@ -23,7 +23,7 @@ def descobrir_penultimo_defensor(defensores):
         jogadores_ordenados = sorted(defensores, reverse=True)
         return(jogadores_ordenados[1])
 
-#TESTAR CODIGO
-print(impedimento(80, [75, 100, 78.5, 60], 60, MEIO_CAMPO))
-print(impedimento(77, [75, 100, 78.5, 60], 60, MEIO_CAMPO))
-print(impedimento(72, [75, 70, 78.5, 60], 60, MEIO_CAMPO))
+if __name__ == "__main__":
+    print(impedimento(80, [75, 100, 78.5, 60], 60, MEIO_CAMPO))
+    print(impedimento(77, [75, 100, 78.5, 60], 60, MEIO_CAMPO))
+    print(impedimento(72, [75, 70, 78.5, 60], 60, MEIO_CAMPO))
