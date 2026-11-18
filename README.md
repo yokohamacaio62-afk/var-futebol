@@ -1,4 +1,4 @@
-# Meu projeto é um var de futebol (cada dia aprendendo novas tecnologias)
+# Meu projeto é um var de futebol
 
 ## No dia 1 aprendi e usei:
 - FastAPI criar rotas 
