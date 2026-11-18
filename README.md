@@ -33,6 +33,7 @@ uvicorn main:app --reload
 
 ### Dia 1
 
+#### Á Noite
 - Criei minhas primeiras rotas com FastAPI
 - Entendi cliente e servidor
 - Fiz a regra do impedimento
@@ -40,7 +41,7 @@ uvicorn main:app --reload
 
 ### dia 2 
 
-## pela manha 
+#### Pela Manha 
 - Fiz o import de algumas coisas do logica_var para o main.py
 - Criei uma class chamada DadosLance usando o basemodel
 - E criando os atacantes como float e todos menos o defensores pois estavam em uma lista
