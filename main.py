@@ -36,6 +36,5 @@ class DadosLance(BaseModel):
 @app.post('/impedimento')
 async def root_impedimento(lance: DadosLance):
 #aqui dei um return da decisao baseado no dados do lance que vai ser passado na class dados lance
-    return{'decisao': impedimento(lance.atacante, lance.defensores, lance
-    .bola, MEIO_CAMPO)}
+    return{'decisao': impedimento(lance.atacante, lance.defensores, lance.bola, MEIO_CAMPO)}
 

@@ -37,3 +37,11 @@ uvicorn main:app --reload
 - Entendi cliente e servidor
 - Fiz a regra do impedimento
 - Aprendi o básico de Git e GitHub
+
+### dia 2 
+
+## pela manha 
+- Fiz o import de algumas coisas do logica_var para o main.py
+- Criei uma class chamada DadosLance usando o basemodel
+- E criando os atacantes como float e todos menos o defensores pois estavam em uma lista
+- Apos usei post para o /impedimento  aonde passei uma funcao root_impedimento usando uma variavel lance e tipo DadosLance retornando um dict decisao usando a funcao impedimento que importei e apenas colocando os atacantes defensores e etc
