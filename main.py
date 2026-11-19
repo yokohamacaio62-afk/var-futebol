@@ -3,7 +3,9 @@ from fastapi import FastAPI
 #importando impedimento para usar no /impedimento e a variavel fixa meio_campo
 from logica_var import impedimento, MEIO_CAMPO
 #para converter numeros caso necessario ou ler json ou documentar o /docs tipo um porteiro conferindo os dados
-from pydantic import BaseModel
+#alem disso coloquei uma virgula e importei o field ele vai me ajuda a resolver o problema da class DadosLance
+from pydantic import BaseModel, Field
+
 
 
 #criando um obj dele 
@@ -26,9 +28,10 @@ async def root_sobre():
     return{'nome': 'VAR FUTEBOL',
            'versao': '1.0'}
 
+#usei o Field pois quando minha lista vier com menos jogadores e apenas 1 sera o goleiro entao nao tem pq impedir
 class DadosLance(BaseModel):
     atacante: float
-    defensores: list[float]
+    defensores: list[float] = Field(min_length=2)
     bola: float
 
 #usando post em vez de get pois ele precisa receber o lance para analisar 
