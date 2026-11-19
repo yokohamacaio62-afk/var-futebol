@@ -55,3 +55,12 @@ uvicorn main:app --reload
 - Entendi que o erro é 402 a culpa do que enviaram nao culpa do servidor (porem acho que se eu nao pensei a culpa foi minha)
 - usei o Field com o min_length =2 para nao deixar a lista ser menos que 2 pois um seria o goleiro
 
+### dia 3
+
+#### Pela Tarde
+- usei o testclient como falso navegador 
+- entendi a diferenca entre testar uma funcao e testar a api 
+- que no test o cliente sempre sou eu entao eu passo as informacoes e o assert guarda a resposta que ja conheco
+- que um teste nao calcula a resposta ela ja sabe qual e a reposta 
+- que nao arruma um teste antes para ele passar, primeiro descobre oque falhou
+
