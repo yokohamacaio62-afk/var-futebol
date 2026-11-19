@@ -46,3 +46,12 @@ uvicorn main:app --reload
 - Criei uma class chamada DadosLance usando o basemodel
 - E criando os atacantes como float e todos menos o defensores pois estavam em uma lista
 - Apos usei post para o /impedimento  aonde passei uma funcao root_impedimento usando uma variavel lance e tipo DadosLance retornando um dict decisao usando a funcao impedimento que importei e apenas colocando os atacantes defensores e etc
+
+#### Á Noite
+- usei o pytest para testar o impedimento 
+- usei pela primeira vez o assert que ele vai me mostrar quando eu errar e quando eu usar ele tem que ter sempre test _
+- Errei de proposito para ver se funcionava 
+- Criei 6 teste todos parecidos 
+- Entendi que o erro é 402 a culpa do que enviaram nao culpa do servidor (porem acho que se eu nao pensei a culpa foi minha)
+- usei o Field com o min_length =2 para nao deixar a lista ser menos que 2 pois um seria o goleiro
+
