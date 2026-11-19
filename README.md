@@ -39,7 +39,7 @@ uvicorn main:app --reload
 - Fiz a regra do impedimento
 - Aprendi o básico de Git e GitHub
 
-### dia 2 
+### Dia 2 
 
 #### Pela Manha 
 - Fiz o import de algumas coisas do logica_var para o main.py
@@ -55,7 +55,7 @@ uvicorn main:app --reload
 - Entendi que o erro é 402 a culpa do que enviaram nao culpa do servidor (porem acho que se eu nao pensei a culpa foi minha)
 - usei o Field com o min_length =2 para nao deixar a lista ser menos que 2 pois um seria o goleiro
 
-### dia 3
+### Dia 3
 
 #### Pela Tarde
 - usei o testclient como falso navegador 
