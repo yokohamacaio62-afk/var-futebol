@@ -42,10 +42,9 @@ uvicorn main:app --reload
 
 ---
 
-### Dia 2
+### Dia 2 (19/11/26)
 
-#### Pela Manha (19/11/26)
-
+#### Pela Manha 
 - Fiz o import de algumas coisas do logica_var para o main.py
 - Criei uma class chamada DadosLance usando o basemodel
 - E criando os atacantes como float e todos menos o defensores pois estavam em uma lista
