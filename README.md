@@ -31,7 +31,7 @@ uvicorn main:app --reload
 
 ## Diário
 
-### Dia 1
+### Dia 1 (18/11/26)
 
 #### Á Noite
 
@@ -44,7 +44,7 @@ uvicorn main:app --reload
 
 ### Dia 2
 
-#### Pela Manha
+#### Pela Manha (19/11/26)
 
 - Fiz o import de algumas coisas do logica_var para o main.py
 - Criei uma class chamada DadosLance usando o basemodel
@@ -62,7 +62,7 @@ uvicorn main:app --reload
 
 ---
 
-### Dia 3
+### Dia 3 (19/11/26)
 
 #### Pela Tarde
 
@@ -71,3 +71,19 @@ uvicorn main:app --reload
 - que no test o cliente sempre sou eu entao eu passo as informacoes e o assert guarda a resposta que ja conheco
 - que um teste nao calcula a resposta ela ja sabe qual e a reposta
 - que nao arruma um teste antes para ele passar, primeiro descobre oque falhou
+
+---
+
+### Dia 4 (21/11/26)
+
+#### Pela manhã
+- Planejei o meu banco de dados: coloquei o que guardar de cada lance e qual tipo
+- Aprendi o que é um banco relacional e linhas, colunas, tabela
+- Aprendi o que é um ORM (que seria um tradutor do py para sql). Também aprendi as peças: motor engine, criação das tabelas
+- Aprendi o que é chave e o que começa vazio antes de salvar
+- Decidi guardar os defensores como texto usando json.dumps e json.loads
+- Adicionei tempo, minuto, segundo para diferenciar lances no mesmo minuto
+- Criei a classe Lance com SQLModel e o banco var.db com SQLite
+- Vi o que o sql gerou com o echo=True
+- Usei o git restore pois perdi um arquivo
+- Coloquei os arquivos .db no .gitignore
