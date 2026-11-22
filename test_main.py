@@ -16,14 +16,37 @@ def test_root_sobre():
     assert resposta.json() =={'nome': 'VAR FUTEBOL', 'versao': '1.0'}
 
 #teste para a rota do impedimento caso esteja impedido
+#adicionei alguns intens pois mudei o dadosLance tambem 
 def test_root_impedimento():
-    resposta = cliente.post('/impedimento', json = {'atacante':80, 'defensores' : [75, 100, 78.5, 60], 'bola': 60})
+    resposta = cliente.post('/impedimento', json ={
+        'jogo' : 'Corinthians x Palmeiras',
+        'data': '2026-03-17',
+        'tempo': 1,
+        'minuto': 34,
+        'segundo': 12,
+        'time': 'Corinthians',
+        'jogador': 'Yuri Alberto',
+        'atacante': 80,
+        'defensores': [75, 100, 78.5, 60],
+        'bola': 60
+    })
     assert resposta.status_code == 200
     assert resposta.json() == {'decisao': 'jogador impedido'}
 
 #teste para a rota do impedimento caso esteja nao esteja impedido
 def test_root_nao_impedimento():
-    resposta = cliente.post('/impedimento', json = {'atacante':77, 'defensores' : [75, 100, 78.5, 60], 'bola': 60})
+    resposta = cliente.post('/impedimento', json ={
+        'jogo' : 'Corinthians x Palmeiras',
+        'data': '2026-03-17',
+        'tempo': 1,
+        'minuto': 34,
+        'segundo': 12,
+        'time': 'Corinthians',
+        'jogador': 'Yuri Alberto',
+        'atacante': 77,
+        'defensores': [75, 100, 78.5, 60],
+        'bola': 60
+    })
     assert resposta.status_code == 200
     assert resposta.json() == {'decisao': 'jogador nao esta impedido'}
 

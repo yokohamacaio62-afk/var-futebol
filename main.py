@@ -5,6 +5,8 @@ from logica_var import impedimento, MEIO_CAMPO
 #para converter numeros caso necessario ou ler json ou documentar o /docs tipo um porteiro conferindo os dados
 #alem disso coloquei uma virgula e importei o field ele vai me ajuda a resolver o problema da class DadosLance
 from pydantic import BaseModel, Field
+#importar o date para dadosLance
+from datetime import date
 
 
 
@@ -29,9 +31,19 @@ async def root_sobre():
            'versao': '1.0'}
 
 #usei o Field pois quando minha lista vier com menos jogadores e apenas 1 sera o goleiro entao nao tem pq impedir
+#vou usar field para limitar o tempo e minuto e segundo usando tipo uma regra de >= <= ou == e etc 
+#gt maior que| ge maior ou igual |lt menor que | le maior ou igual 
+#coloquei um max_length e min_lenght pois se tiver 1 defensor sera o goleiro e max pois so pode ter 11 jogadores em campo
 class DadosLance(BaseModel):
+    jogo : str
+    data : date
+    tempo : int = Field (ge = 1, le= 4)
+    minuto : int = Field (ge=0,le=130)
+    segundo : int = Field (ge=0,le=59)
+    time : str
+    jogador : str
     atacante: float
-    defensores: list[float] = Field(min_length=2)
+    defensores: list[float] = Field(min_length=2, max_length=11)
     bola: float
 
 #usando post em vez de get pois ele precisa receber o lance para analisar 
