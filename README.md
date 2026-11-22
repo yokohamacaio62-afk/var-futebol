@@ -86,3 +86,15 @@ uvicorn main:app --reload
 - Vi o que o sql gerou com o echo=True
 - Usei o git restore pois perdi um arquivo
 - Coloquei os arquivos .db no .gitignore
+
+---
+
+### Dia 5 (22/11/26)
+
+### Pela manhã
+- Adicionei novos dados na DadosLance: jogo, data, tempo, minuto, segundo, time e jogador
+- Entendi o que o ge, lt, gt e le do Field fazem para colocar limites
+- Adicionei limites no tempo de 1 a 4 para caso tenha prorrogação, minuto de 0 a 130 e segundo de 0 a 59
+- Usei max_length nos defensores pois só pode ter 11 em campo
+- Aprendi o formato ISO
+- Aprendi o princípio DRY e fiz o LANCE_VALIDO e o copy()
