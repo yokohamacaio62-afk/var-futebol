@@ -61,5 +61,9 @@ async def root_impedimento(lance: DadosLance):
     salvar_lance = Lance(jogo=lance.jogo, data=lance.data,tempo=lance.tempo,minuto=lance.minuto,segundo=lance.segundo,time=lance.time,jogador=lance.jogador,
     atacante=lance.atacante,defensores=json.dumps(lance.defensores), bola=lance.bola,decisao = decisao
     )
+#usei o with Session e o motor como session e adicionei o salvar_lance e commitei e salvei no banco de dados 
+    with Session(engine) as session:
+        session.add(salvar_lance)
+        session.commit()
     return{'decisao': decisao}
 
