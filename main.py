@@ -7,8 +7,12 @@ from logica_var import impedimento, MEIO_CAMPO
 from pydantic import BaseModel, Field
 #importar o date para dadosLance
 from datetime import date
-
-
+#usando para importar o lance e o motor
+from database import Lance, engine
+#importando a Session
+from sqlmodel import Session
+#importando o json
+import json
 
 #criando um obj dele 
 app = FastAPI()
@@ -48,8 +52,14 @@ class DadosLance(BaseModel):
 
 #usando post em vez de get pois ele precisa receber o lance para analisar 
 #usando a classe que criei DadosLance usei ela como parametro e passei a variavel e o tipo 
+#criei uma variavel decisao para o return passar apenas o decisao
+#criei o salvar lance para depois salvar dentro do meu banco de dados
 @app.post('/impedimento')
 async def root_impedimento(lance: DadosLance):
 #aqui dei um return da decisao baseado no dados do lance que vai ser passado na class dados lance
-    return{'decisao': impedimento(lance.atacante, lance.defensores, lance.bola, MEIO_CAMPO)}
+    decisao = impedimento(lance.atacante, lance.defensores, lance.bola, MEIO_CAMPO)
+    salvar_lance = Lance(jogo=lance.jogo, data=lance.data,tempo=lance.tempo,minuto=lance.minuto,segundo=lance.segundo,time=lance.time,jogador=lance.jogador,
+    atacante=lance.atacante,defensores=json.dumps(lance.defensores), bola=lance.bola,decisao = decisao
+    )
+    return{'decisao': decisao}
 
