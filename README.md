@@ -98,3 +98,17 @@ uvicorn main:app --reload
 - Usei max_length nos defensores pois só pode ter 11 em campo
 - Aprendi o formato ISO
 - Aprendi o princípio DRY e fiz o LANCE_VALIDO e o copy()
+
+---
+
+### Dia 6 (23/11/26)
+
+#### Pela tarde
+- Estudei o SQLModel
+- Entendi como salvar no banco de dados: criar os objetos, abrir a session, add e commit
+- Aprendi a usar o with
+- Separei a decisão numa variável para usar ela duas vezes
+- Criei um objeto Lance na rota com os dados que chegaram e a decisão
+- Usei o json.dumps para poder guardar a lista de defensores
+- Fiz a rota POST /impedimento salvar cada lance no banco de dados var.db
+- Descobri que os testes estão salvando lances no banco de verdade
