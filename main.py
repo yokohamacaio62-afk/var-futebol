@@ -71,8 +71,11 @@ async def root_impedimento(lance: DadosLance):
 async def root_historico_lances():
 #com a sessao aberta no motor, que eu decidi chamar de session, guarde o pedido
     with Session(engine) as session:
+# a session leva o pedido ao banco e guarda o que voltou em results
         statement = select(Lance)
+#fala com o banco para pegar a tabela
         results = session.exec(statement)
+ # transforma os resultados em uma lista de lances
         lances = results.all()
     return lances
 
