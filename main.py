@@ -68,14 +68,25 @@ async def root_impedimento(lance: DadosLance):
     return{'decisao': decisao}
 
 @app.get('/lances')
-async def root_historico_lances():
 #com a sessao aberta no motor, que eu decidi chamar de session, guarde o pedido
-    with Session(engine) as session:
+async def root_historico_lances():
 # a session leva o pedido ao banco e guarda o que voltou em results
+    with Session(engine) as session:
+        #fala com o banco para pegar a tabela
         statement = select(Lance)
-#fala com o banco para pegar a tabela
+        # transforma os resultados em uma lista de lances
         results = session.exec(statement)
- # transforma os resultados em uma lista de lances
+ 
         lances = results.all()
-    return lances
+    lances_formatados = []
+    #uso um for lance para percorrer lances
+    for lance in lances:
+        #transforma o lance em dict
+        lance_formatado = lance.model_dump()
+        #minha lista de defensores que era str passa a ser lista 
+        lance_formatado['defensores'] = json.loads(lance_formatado['defensores'])
+        #adicionei os lances agora em lista no lances_formatados
+        lances_formatados.append(lance_formatado)
+    return lances_formatados
+    
 
