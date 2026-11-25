@@ -9,8 +9,8 @@ from pydantic import BaseModel, Field
 from datetime import date
 #usando para importar o lance e o motor
 from database import Lance, engine
-#importando a Session
-from sqlmodel import Session
+#importando a Session e select 
+from sqlmodel import Session,select
 #importando o json
 import json
 
@@ -66,4 +66,13 @@ async def root_impedimento(lance: DadosLance):
         session.add(salvar_lance)
         session.commit()
     return{'decisao': decisao}
+
+@app.get('/lances')
+async def root_historico_lances():
+#com a sessao aberta no motor, que eu decidi chamar de session, guarde o pedido
+    with Session(engine) as session:
+        statement = select(Lance)
+        results = session.exec(statement)
+        lances = results.all()
+    return lances
 
