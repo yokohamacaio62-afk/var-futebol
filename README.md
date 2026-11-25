@@ -112,3 +112,15 @@ uvicorn main:app --reload
 - Usei o json.dumps para poder guardar a lista de defensores
 - Fiz a rota POST /impedimento salvar cada lance no banco de dados var.db
 - Descobri que os testes estão salvando lances no banco de verdade
+
+---
+
+### Dia 7 (24/11/26)
+
+#### Pela noite
+
+- Estudei como buscar dados no banco com o SQLModel
+- Aprendi o SELECT do SQL e que o * quer dizer todas as colunas
+- Entendi os passos da consulta: abrir a session, montar o pedido com select, executar com exec e pegar a lista com .all()
+- Criei a rota GET /lances para mostrar o histórico de lances
+- Usei um for com model_dump, json.loads e append para devolver os defensores como lista
