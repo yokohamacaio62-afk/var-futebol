@@ -13,6 +13,9 @@ from database import Lance, engine
 from sqlmodel import Session,select
 #importando o json
 import json
+#importar o HTTPException para erro 404
+from fastapi import FastAPI, HTTPException
+
 
 #criando um obj dele 
 app = FastAPI()
@@ -81,12 +84,19 @@ async def root_historico_lances():
     lances_formatados = []
     #uso um for lance para percorrer lances
     for lance in lances:
-        #transforma o lance em dict
-        lance_formatado = lance.model_dump()
-        #minha lista de defensores que era str passa a ser lista 
-        lance_formatado['defensores'] = json.loads(lance_formatado['defensores'])
-        #adicionei os lances agora em lista no lances_formatados
+        lance_formatado = formatar_lance(lance)
         lances_formatados.append(lance_formatado)
     return lances_formatados
-    
 
+def formatar_lance(lance):
+    lance_formatado = lance.model_dump()
+    lance_formatado['defensores'] = json.loads(lance_formatado['defensores'])
+    return lance_formatado
+
+@app.get('/lances/{lance_id}')
+async def buscar_lance(lance_id: int):
+    with Session(engine) as session:
+        lance_buscado = session.get(Lance,lance_id)
+        if lance_buscado is None:
+            raise HTTPException(status_code=404, detail='Lance nao encontrado')
+        return formatar_lance(lance_buscado)
