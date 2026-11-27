@@ -129,6 +129,7 @@ uvicorn main:app --reload
 ### Dia 8 (26/11/26)
 
 #### Pela manhã
+
 - Criei a rota GET /lances/{lance_id} para ver um lance específico pelo id
 - Usei o session.get para buscar um lance pela chave primária
 - Aprendi o código 404 (não encontrado) e usei o HTTPException para devolver ele
