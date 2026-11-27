@@ -124,3 +124,14 @@ uvicorn main:app --reload
 - Entendi os passos da consulta: abrir a session, montar o pedido com select, executar com exec e pegar a lista com .all()
 - Criei a rota GET /lances para mostrar o histórico de lances
 - Usei um for com model_dump, json.loads e append para devolver os defensores como lista
+---
+
+### Dia 8 (26/11/26)
+
+#### Pela manhã
+- Criei a rota GET /lances/{lance_id} para ver um lance específico pelo id
+- Usei o session.get para buscar um lance pela chave primária
+- Aprendi o código 404 (não encontrado) e usei o HTTPException para devolver ele
+- Entendi a diferença entre o raise, que para tudo na hora, e o return
+- Criei a função formatar_lance para não repetir código nas duas rotas
+- Testei no /docs: com o id 1 deu 200 e com o 999 deu 404
